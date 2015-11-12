@@ -1,0 +1,13 @@
+api:
+  build: ./postgrest/
+  ports:
+    - 3000:3000
+  links:
+    - db
+  restart: always
+db:
+  build: ./postgresql/
+  environment:
+    POSTGRES_PASSWORD: foobar
+  ports:
+    - 5432:5432
