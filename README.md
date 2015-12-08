@@ -23,7 +23,7 @@ If you want to define the schema prior to starting the containers, place the req
 ### Obtaining Database Backups
 
 ```bash
-docker exec postgrestwithpostgresql_db_1 pg_dump -U postgres > postgresql/scripts/create_schema.sql
+docker exec dockerpostgrestwithpostgresql_db_1 pg_dump -U postgres > postgresql/scripts/create_schema.sql
 ```
 
 The pg_dump command provided in the example outputs a plain-text file
