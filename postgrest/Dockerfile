@@ -2,7 +2,7 @@ FROM centos
 
 RUN yum install -y tar wget postgresql-devel
 
-ENV POSTGREST_VERSION 0.3.0.1
+ENV POSTGREST_VERSION 0.3.0.2
 
 RUN wget https://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VERSION}/postgrest-${POSTGREST_VERSION}-centos.tar.xz
 RUN tar --xz -xvf postgrest-${POSTGREST_VERSION}-centos.tar.xz
