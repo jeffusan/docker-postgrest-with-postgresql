@@ -1,6 +1,9 @@
 docker-postgrest-with-postgresql
 --------------------------------
 
+For some reason, when using docker-compose on OSX/with docker-machine/boot2docker, the postgrest containers steadfastly refused 
+to connect to the db container. So I wrote a little bash script to replace the docker-compose.yml
+
 Links together the official Docker image for PostgreSQL and an up-to-date variant of the one supplied in the PostgREST wiki (https://github.com/begriffs/postgrest/wiki/Docker)
 
 ### Prerequisites
@@ -10,13 +13,13 @@ Links together the official Docker image for PostgreSQL and an up-to-date varian
 
 ## Local Usage
 
-When using locally, you can access the containers on:
-- http://localhost:5432
-- http://localhost:80
+You can access the containers on:
+- http://$(docker-machine ip):5432
+- http://$(docker-machine ip):80
 
 ### Getting Started
 
-To start the containers, run: ```docker-compose up -d```
+To start the containers, run: ```./runDockerBuild```
 
 If you want to define the schema prior to starting the containers, place the required .sql or .sh files within the _postgresql/scripts_ directory.
 

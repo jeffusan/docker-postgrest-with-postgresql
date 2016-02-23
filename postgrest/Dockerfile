@@ -8,10 +8,7 @@ RUN wget https://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VE
 RUN tar --xz -xvf postgrest-${POSTGREST_VERSION}-centos.tar.xz
 RUN mv postgrest /usr/local/bin/postgrest
 
-CMD postgrest  postgres://postgres:foobar@db:5432/postgres \
-               --port 3000 \
-               --schema public \
-               --anonymous postgres \
-               --pool 200
+COPY waitForPostgresqlConnection.sh /
+ENTRYPOINT ["/waitForPostgresqlConnection.sh"]
 
 EXPOSE 3000
