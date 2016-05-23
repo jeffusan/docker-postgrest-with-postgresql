@@ -12,7 +12,7 @@ Links together the official Docker image for PostgreSQL and an up-to-date varian
 
 When using locally, you can access the containers on:
 - http://localhost:5432
-- http://localhost:80
+- http://localhost:3000
 
 ### Getting Started
 
