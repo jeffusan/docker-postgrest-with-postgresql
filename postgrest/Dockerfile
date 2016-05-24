@@ -8,10 +8,10 @@ RUN wget https://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VE
 RUN tar --xz -xvf postgrest-${POSTGREST_VERSION}-centos.tar.xz
 RUN mv postgrest /usr/local/bin/postgrest
 
-CMD postgrest  postgres://postgres:foobar@db:5432/postgres \
+CMD postgrest  postgres://docker:docker@mc3:5432/postgres \
                --port 3000 \
                --schema public \
-               --anonymous postgres \
+               --anonymous docker \
                --pool 200
 
 EXPOSE 3000
